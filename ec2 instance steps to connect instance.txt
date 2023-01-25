@@ -1,0 +1,28 @@
+
+ec2 instance launch steps 
+
+1.Sign in to the AWS Management Console and open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+
+2.In the navigation pane, under Instances, choose Instances.
+
+3. Browse to and choose your Windows Server instance in the list.
+
+Choose Connect.
+
+Choose Get Password, and then choose Choose File.
+
+Browse to and choose the Amazon EC2 instance key pair file associated with the Windows Server Amazon EC2 instance, and then choose Open.
+
+Choose Decrypt Password. Make a note of the password that is displayed. You need it in step 10.
+
+Choose Download Remote Desktop File, and then open the file.
+
+If you are prompted to connect even though the publisher of the remote connection can't be identified, proceed.
+
+Type the password you noted in step 7, and then proceed. (If your RDP connection client application prompts you for a user name, type Administrator.)
+
+If you are prompted to connect even though the identity of the remote computer cannot be verified, proceed.
+
+After you are connected, the desktop of the Amazon EC2 instance running Windows Server is displayed.
+
+You can now disconnect from the Amazon EC2 instance.
