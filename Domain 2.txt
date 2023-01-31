@@ -1,0 +1,29 @@
+design resiliance architecture 
+
+1: working on blue green deployment fot the most recent frount end application they need to design a solution that allow them to control how much traffic is send to the new version application and how much goes to the old one if there is problem with the deployment it needs to be able to switch back to the previus version at movements notice which service is sure these goals are met? 
+
+use route 53 ctrate latency base records to control traffic distribution 
+2:use rpute-53 create a weighted record set to control the % of traffic to each endpoint.
+
+Answer: 2:use rpute-53 create a weighted record set to control the % of traffic to each endpoint. 
+
+2: compony migrate to hybrid cloud compony wants to rto with major cost best disater recover to meet rt/rp objetives have minimal version of application app is run in another region which disasterrecovery plan will meet ?
+multi-site 2: backup and restore 3: warm standby 4: pilot light 
+	Answr: warm standby 
+
+3: app is hosted on ec2 in an auto scalling add an application load balancer to front auto scaling architecture running on ipv4 and ipv6 route53 record type at the zone apex will you use to point to dns name chose two 
+1: alias with a cname record set 2: alis with an a type record set 
+3 alis with an mx type record set 4: alis with an AAAA Type record set 
+
+Answer:  2: alis with an a type record set 4  alis with an AAAA type record set 
+
+4: task is configure more highly available architecture to meet aggresive RTO in case of disaster u hae decide to use RDS MULTI AZ deployment how is the replication handles for RDS MULTI AZ
+1:standby replica in differengt az 2: automatic provissioned and maintain syncronise stndby replica in different A
+
+5: use load balancer to direct traffic to auto scalling group of ec2 instance across multiple A.Z which requirement to be served by alb?
+1: support for customer security policy 2:path base routing 3: ec2 classic 4: tcp and ssl listeners 
+Answer: path based routing.
+
+6: a compony has an auto scaling group of ec2 instance hosting their retails sales applications any significant downtime for this applications can result in large losses of profit therefore architecture also includes an application load balancer and rds database in multi-az deployment the company has a very aggressive recovery time objective in case of disaster how long will a failover of an rds database typically complete? A almost instantly B within an hour C one to two minute D under 10 minutes 
+A failover of an RDS database in a multi-AZ deployment is typically completed within a few minutes. The exact time can vary depending on the specific configuration and the amount of data that needs to be replicated, but it is generally considered to be almost instantaneous.
+

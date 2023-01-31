@@ -1,0 +1,79 @@
+  domain 1  Design secure Architecture 
+
+1 e commerse compony want to automate evalution of scurity of ec2 instance able to verify and project that the testing process complies with security and compliance requirement  
+A:use macie to classify and protect ec2 instance automatically 
+B. use Amazon Inspector with cloudWatch to publish Amazon SNS notification 
+C: use Amazon GuardDuty to publish Amazon SNS notification 
+ Answer: use Amazon Inspector with cloudWatch to publish Amazon SNS  
+
+2: you have been evaluting NACL in compony currently you are looking at the default network ACL which statement is true regarding subnets and NACL?
+public subnets can use NACL 2> NACL WILL always associated with each other 3: vpc must associated with nacl subnet is automatically associated with default NACL 
+Answer: vpc must associated with nacl subnet is automatically associated with default NACL .
+
+3: aws envornment vpc and launching ec2 instance within vpc the initial instance will place in public subnet the consultant begins to create security group what is true of default security group ?
+a delete group or change group rules 2 you can't delete this group however you can change the group rules. 3 cant delete group nor change group rules 
+Answer: you can't delete this group however you can change the group rules 
+
+4: create checklidt of steps necessary to perform this migration shared responsiblity model which option does customer under shared responsiblity model ?
+IAM 2: h/w infrastruture 3: A.Z 4: N/W infrastructure 
+Answer: iam 
+5: 
+data store in s3 like financial information an audit has determined that dta must be stored in a secure manner  dta store in bucket already or data comming inti bucket must be analyse and alert send out flagging improperly stored data which aws servicecan used to meet this requirement 
+1: aws guardduty 2: amazon Macie 3 trusted advisor aws inspector 
+Answer: amazon macie 
+
+6:data handle s3 dynamodb elasticcache glacier rds configure applicagion using stateless web servers services can u use to handles session state data ?
+1: redshift 2: amazon elasticcache 3: amazon dynamodb amazon rds
+Answer: 2: amazon elasticcache 3: amazon dynamodb amazon rds 
+
+7: subnet but in the same a.z instance willhouse the main website and will need communicate with db on 2 nd instance how canu do to communicate 2 instancees eac other 
+Answer: NACL allow communicate between 2 subnets 2: all security groups allow to communication between app and db on the port using proper protocol 
+ 
+8: asg of ec2 alp and backend by rds db begin to monitor ec2 instance using cloudwatch matrics which matrics is not readily available out of box 
+1: diskreadops 2: cpu utilization  3: networking 4: memory utilization 
+Answer : memory utilization 
+
+9: ALB front end rds database by backend team has notified of cross-site-scripting and sql injection attack on application  take step to quickly migrate attack what steps to u take 
+1: block ip 2:use aws waf to block sql injection and cross-sitescripting use ALB. 3 use amazon guardduty to prevent attack 
+Answer: use aws waf to block sql injection and cross-sitescripting use ALB.
+
+10 you  have a client in the financial industry who is moving to aws for their IT infrastructure and application they need to become pci complaint to protect their clients card information amazon has many processes in place for pci compliance what steps do u to take to help them become compliant ?  options     1: use server side encryption to protect card holder data     2 secure private subnets with acls and security groups    3 encrypt data in transit    4 monitor access with cloud trail and vpc flow logs 
+
+To help a financial industry client become PCI compliant on AWS, the following steps should be taken:
+
+Use server-side encryption for card holder data storage, such as Amazon S3 server-side encryption, or using the Key Management Service (KMS) to manage encryption keys.
+Secure private subnets with network access control lists (ACLs) and security groups to control inbound and outbound traffic.
+1: Use Transport Layer Security (TLS) or Secure Sockets Layer (SSL) to encrypt data in transit.
+2: Monitor access to resources and detect potential threats using AWS CloudTrail and VPC flow logs.
+Implementing multi-factor authentication for all users accessing sensitive data.
+Regularly reviewing and maintaining security policies and procedures
+Regularly monitoring and testing the security measures put in place.
+Completing an annual PCI DSS Self-Assessment Questionnaire (SAQ) to confirm compliance with PCI DSS.
+Note: It is important to understand that PCI compliance is a continuous process and requires regular monitoring, testing and updating of security measures. Also, it is always recommended to consult with a qualified security assessor (QSA) to ensure compliance with the standard.
+
+11:UR compony need to deploy an application aws account application will reside on ec2 instance in an auto scaling group frontend by application load balancer the compony has using elastic beanstalk to deploy application due to limited aws experience within organization the application now needs to upgrade and small team of subcontractors have been hired to perform these upgrades which web service use to provide users that u authenticate within short term security credential  that can control access to ur aws resources 
+ A IAM Group 
+ B AWS STS     ANSWER 
+ C IAM user account 
+ D preassigned URLs 
+
+The best option for providing short-term security credentials for the subcontractors to authenticate and control access to the AWS resources would be to use AWS STS (Option B). AWS STS (Security Token Service) allows you to create and manage temporary security credentials that can be used to access AWS resources. These credentials are short-lived and can be assigned to specific users or groups, providing a secure way to grant access to your AWS 
+12:you have been hired use aws services handle data rds. redshift elastic cache DynamoDB s3.u have instructed to configure a web application using stateless web servers which services can you use to handle session state data? 
+ A redshift
+ B elasticache ANSWER
+ C DynamoDB  ANSWER
+ d rds,Glacier .  ANSWER
+
+The best option for handling session state data in a web application using stateless web servers would be to use
+Elasticache (Option B). 
+Elasticache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud. It is compatible with the Memcached and Redis protocols and can be used to store session state data, allowing the web servers to remain stateless while still providing a seamless user experience.
+AWS DynamoDB (Option C) is a fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale, but it is not designed for storing session state data.
+AWS RDS (Option D) is a service that makes it easy to set up, operate, and scale a relational database in the cloud, but it is not designed specifically for handling session state data.
+AWS S3 Glacier (Option D) is a service that provides secure, durable, and extremely low-cost Amazon S3 storage classes for data archiving and long-term backup, but it is not designed for storing session state data.
+
+
+AWS Redshift (Option A) is a data warehousing service that allows you to analyze large amounts of data using SQL and BI tools, but it is not designed for storing session state data.
+
+13 . company wants to optimize the costs incurred on its fleet of 100 ec2 instances for the next year based on historical analysis the enginearing team observed that 70 instance handle the compute services of its flagship application and need to be always available the other 30 instances are used to handle batch jobs that can afford a delay processing  u recommended most cost optimal solution?    A purchase 70 instance on demand and 30 spot instances.  B  A purchase 70  on demand instance and 30 reserved  instances  c  A purchase 70 reserved instance and 30 spot instances   D  A purchase 70 reserved instances  and 30 on demand instances      
+
+

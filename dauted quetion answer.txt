@@ -1,0 +1,97 @@
+1: a compony has an application that ingests incoming message dozens of other application and microservices then quickly consumes these message the number of message varies drastically and sometimes increases suddenly to 100,000 each second the compony wants to decouple the solution and increase scalability which solution meets these requirement?                
+  1 persist the message to amazon kinesis data analytics
+  2 deploy the ingestion application to amazon ec2 instance in an auto scaling group to scale the no of ec2 instances based on CPU metrics
+  3 write message to amazon kinesis data stream with single shard 
+  4 publish the message to amazon simple notification service.
+
+Answer Option 3, writing the message to an Amazon Kinesis Data Stream with a single shard, would be the best solution to meet the company's requirement of decoupling the solution and increasing scalability. Kinesis Data Streams allows for real-time streaming and processing of large, distributed data streams, making it well-suited for handling a high volume of incoming messages. The single shard allows for fast and easy scalability, as more shards can be added to the stream as needed. Additionally, using Kinesis Data Streams allows for the data to be easily consumed by other services, such as Kinesis Data Analytics, for further processing.
+
+
+
+
+2:A web application is deploy in aws which consists of 2 tier design:web and database layer what solution shoould you recomended to adress vulnerablity such as cross-site scripting 
+A network load balancer place the web layer behind the NLB AND ENABLE AWS WAF.
+B. application load balancer place the web layer behind  the NLB AND ENABLE AWS WAF.
+c. classic load balancer place the web layer behind  the NLB AND ENABLE AWS WAF.
+B. Application Load Balancer place the web layer behind the ALB AND ENABLE AWS WAF.
+
+A network load balancer and a classic load balancer are both used for layer 4 load balancing (transport layer) and are not as effective for protecting against web application vulnerabilities such as cross-site scripting.
+
+
+
+
+
+An Application Load Balancer (ALB) on the other hand, operates at layer 7 (application layer) and can inspect the content of incoming HTTP/HTTPS traffic. By placing the web layer behind an ALB, you can enable AWS WAF to inspect the incoming traffic and block or allow requests based on predefined rules. This will help to protect against vulnerabilities such as cross-site scripting. 
+
+3:a compony has created a disaster recovery solution for an application load balancer the DR  solution consist of second copy of application running behind a second ALB in another region the solution architect requires a method of automatically updating the dns  record to point to the alb in the second region what action should the solution architect take ?  1 enable an ALB health check 2 use amazon eventbridge to cluster the ALB'S .3 enable an amazon route 53 health check 4 configure an alarm on a cloudTrail trail 
+The solution architect should use Amazon Route 53 to set up a health check and create a failover routing policy for the application load balancer. This will automatically update the DNS record to point to the second ALB in the event of a failure or outage in the primary region. This can be done by configuring an Amazon Route 53 health check and associating it with the primary ALB. In the event that the primary ALB becomes unavailable, Route 53 will automatically route traffic to the second ALB in the secondary region. This option is the most appropriate for automatic update of DNS records to point to the second ALB.
+
+
+4: A company has an eCommerce application that stores data in an on-premises SQL database. The company has decided to migrate this database to AWS. However, as part
+ 
+of the migration, the company wants to find a way to attain sub-millisecond responses to common read requests.
+
+5:A solutions architect knows that the increase in speed is paramount and that a small percentage of stale data returned in the database reads is acceptable.
+
+What should the solutions architect recommend?
+
+A.	Build Amazon RDS read replicas.
+B.	Build the database as a larper instance type.
+C.	Build a database cache usinp Amazon ElastiCache.
+D.	Build a database cache using Amazon Elasticsearch Service (Amazon ES).
+
+C. Build a database cache using Amazon ElastiCache.
+
+
+6:A company has an application that ingests incoming messages. These messages are then quickly consumed by dozens of other applications and microservices. The number of messages varies drastically and sometimes spikes as high as 100,000 each second.
+The company wants to decouple the solution and increase scalability. Which solution meets these requirements?
+A.	Persist the messages to Amazon Kinesis Data Analytics. All the applications will read and process the messages.
+B.	Deploy the application on Amazon EC2 instances in an Auto Scaling group, which scales the number of EC2 instances based on CPU metrics.
+C. write the message to amazon kinesis data streams with a single shard all the application will read from the stream and process the messages. D publish the messages to amazon simple notification service topics with one or more amazon simple queue services subscriptions .all applications then process the message from from the queue 
+
+Answer: D. publishing the messages to Amazon Simple Notification Service (SNS) topics with one or more Amazon Simple Queue Service (SQS) subscriptions and having all the applications process the messages from the queue. This solution allows for the decoupling of the incoming messages from the consuming applications and microservices, and allows for increased scalability by using SNS topics and SQS subscriptions, which can handle high throughput and can be configured for automatic scaling. Additionally, SQS provides a buffer for the messages, which can help absorb spikes in the number of incoming messages, making it a good choice for this use case.
+
+
+
+7: a user wants to list the iam role that is attached to their amazon ec2 instance the user has login access to the ec2 instance but does not have IAM permissions what should a solution architect do to retrieve this information? a run ec2 command curl http://169.254.169.254/latest/meta-data/iam/info 2  curl http://169.254.169.254/latest/user-data/iam/info 3 curl http://169.254.169.254/latest/dyamic/instance-identity / 4 aws iam get -instance-profile --instance-profile-name exampleInstanceprofile
+
+A. run the command curl http://169.254.169.254/latest/meta-data/iam/info on the EC2 instance. This retrieves the IAM role that is currently attached to the EC2 instance through the EC2 instance metadata service, which can be accessed from within the instance without the need for additional IAM permissions. The user must have access to the running ec2 instance and the command does not require any additional permissions.
+
+Option 2,3 and 4 are not valid command or URL to retrieve the information.
+
+8:after significant service outages an online service provider wants an automated solution that can alert them to unusual  performance issues within their aws native applications rather than waiting for resources to  fails the solution would be establish an  applications normal performance pattern and then alert administrators to unexpected changes that could suggest a problem needs to be identified and fixed what aws solution would best meet these requirement ? 1 amazon cloud watch anomaly detection 2 elastic load balancer health checks 3 trusted advisor recommendations 4 amazon guardDuty 
+Amazon CloudWatch Anomaly Detection would best meet the requirement for an automated solution that can alert to unusual performance issues within AWS native applications. CloudWatch Anomaly Detection uses machine learning to establish a normal performance pattern for the application and then alert administrators to unexpected changes that could suggest a problem needs to be identified and fixed.
+
+
+9: a financial institution is preparing for an upcoming audit  u have been placed in charge of preparation for this audit one of the requests made by the auditors is to see documentation on all activity made on your account which aws service will u use to meet this audit request ? 1 cloudtrail 2 cloud watch 3: cloud formation 4: aws config
+corect answer is A AND AS PER CHATGPT IS  D.
+AWS Config would be the appropriate service to use to meet this audit request for documentation on all activity made on the financial institution's account. AWS Config is a service that enables you to assess, audit, and evaluate the configurations of your AWS resources. It continuously monitors and records your AWS resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations. This can help you comply with internal policies and regulatory standards, and meet audit requirements.
+
+10:A new startup is considering the advantages of using DynamoDB vs traditional relational db. un aws rds. the no sql nature of DynamoDB presents a small learning curve to the team members who all have experience with traditional databases the company will have multiple databases and the decision will be made on a case by case basic which of following use cases would favor DynamoDB ? 
+ 1 storing infrequently accessed data
+ 2 managing web session data
+ 3 strong referential integrity  between tables
+ 4 storing metadata for s3 objects 
+
+Answer : A Storing infrequently accessed data: DynamoDB is a good choice for storing infrequently accessed data because it is designed to scale horizontally, making it highly available and able to handle a large amount of data.
+
+        B.Managing web session data: DynamoDB is a good choice for managing web session data because it is a NoSQL database and can handle high levels of read and write requests.
+
+       D. Storing metadata for S3 objects: DynamoDB is a good choice for storing metadata for S3 objects because it can handle high levels of read and write requests, and can scale horizontally to handle a large amount of data. Additionally, DynamoDB and S3 can be integrated together, making it easy to store and retrieve metadata for S3 objects.
+
+
+SHORT EXPLAINATION MCQ 
+11.u have a client in the financial industry who is moving to aws for their IT infrastructure and application they need to become pci complaint to protect their clients card information amazon has many processes in place for pci compliance what steps do u to take to help them become compliant 1: use server side encryption to protect card holder data 2 secure private subnets with acls and security groups 3 encrypt data in transit 4 monitor access with cloud trail and vpc flow logs 
+
+1:To help a financial industry client become PCI compliant on AWS, the following steps should be taken:
+
+Use server-side encryption for card holder data storage, such as Amazon S3 server-side encryption.
+Secure private subnets with network access control lists (ACLs) and security groups to control inbound and outbound traffic.
+Use Transport Layer Security (TLS) or Secure Sockets Layer (SSL) to encrypt data in transit.
+Monitor access to resources and detect potential threats using AWS CloudTrail and VPC flow logs.
+Implementing multi-factor authentication for all users accessing sensitive data.
+Regularly reviewing and maintaining security policies and procedures
+Regularly monitoring and testing the security measures put in place.
+Completing an annual PCI DSS Self-Assessment Questionnaire (SAQ) to confirm compliance with PCI DSS.
+
+

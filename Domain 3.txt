@@ -1,0 +1,149 @@
+HIGH PERFORMANCE COMPUTING 
+
+1: design a daily task which take 3 hours to complete if task is stopped it should be restarted from the begning what is the most cost effective for this problem 
+A: use aws lambda function triggered by an amazon EventBridge schdulded event.
+B. use ec2 resereved instance which uses a scripting to be triggered by a cron job 
+C: use ECS task running ec2 triggered by amazon Eventbridge scheduled event 
+D:  use ECS fargate task triggered by a amazon Eventbridge scheduled event
+Answer:use ECS fargate task triggered by a amazon Eventbridge scheduled event
+
+2:
+ec2 instance distributed across multiple AZ FOR an application collection of over 977 TB of text files tou need to ensure that the text file storage component can scale to meet ththe application demand at all time compony need to  cost -effecttive solutiob 
+1 EBS 2 RDS 3. S3 4 EFS
+Answer: S3
+
+3:migrate to oracle database to amazon arora postgreSQL application should transfer sequentially  during entire migration process data should be maintain in sync  across both oracle and arora 
+1" use aws dms to create a change data cdc 
+2: configure aws schema conversion tool with aws dms using a memory optimization replication instance create full load additionally change data capture. replication task and a table mapping to select all tables .
+
+
+Answer: configure aws schema conversion tool with aws dms using a memory optimization replication instance create full load additionally change data capture. replication task and a table mapping to select all tables .
+
+4: using an s3 bucket as a website to serve photos of television personalities within compony photos intended to served to local affilates the compony but you have found that these photos are being acessed and pirated for other website what can u do to stop this ?
+A use cloudfront on front end to serve the photos
+B. USE NACL to block ip address of unautherise users
+c: set up rds db to stop the photo
+d: remove public read acess from the bucket then provide your users with presigned url to acess  the photo
+Answr:  remove public read acess from the bucket then provide your users with presigned url to acess  the photo
+
+5:baseball leage has chose to use key value and document database for storage processing data delevery dta requirements involves high speed processing of data such as a doppler radar system which samples the positij of baseball 2000 times per second which aws data storage can meet these requirement 
+1 redshift 2:RDS 3: S3 4: DYNAMODB .
+ANswer: DYNAMODB 
+
+6: compony has 200 users s3 bucket has created allow roughly a third of all users acess to sensetive information in the bucket what is the most time effective way to get these user acess to bucket ?
+1: create new role t permision add to theser group2> create a new policy which will grant permission to bucket crate a group and attach the policy to that group add the users to this group 
+3: both give permission 4: create role attach policy 
+Answer:  create a new policy which will grant permission to bucket crate a group and attach the policy to that group add the user to this group .
+
+7: application will run on ec2 request s3 and dynamodb what is best way to permission to these aws service ?
+1: embed credential to acess aws service 2: create iam user give permission and pass user crediential 3: create iam role u attach to ec2 to give temprary security to applcaion 
+Answer:create iam role u attach to ec2 to give  temprary security to applcaion .
+
+8: team is assign review the subnets in main vpc compony add some private subnet and segregate database from public traffic what differentiate a public subnet from private subnet 
+1: publicc subnet r meant to house ec2 instance with public ip 2: public subnet has public ip 3: public subnet are associated with public AZ 4: subnets traffic is routed to an internat gateway the subnet is called public subnet.
+Answer : subnets traffic is routed to an internat gateway the subnet is  called public subnet. 
+9: 
+compony use iot device to better understand their assets in the field task is monitor the iot devices in real time to provide valuable insight maintain realiblity availablity performance of iot devices streaming data with standered sql without to learn new programming language 
+1: kinesis data analytics 2 aws lambada 3 aws redshieft 4 aws kinesis stream.
+Answer : kinesis data analytics 
+
+10 : u begun to testing scaling of the auto scalling group using a stress tool to force the cpu utilization to scale out action stress tool also use for removing stress to force scale in but u notice that action only takes place in 5 minute intervals .
+1: stress tool configure to run 5 minte 2: load balancer is managing the load and limiting stress 3: auto scalling group scale in intervals for 5 minutes 4: auto scalling group is following the default cooldown procesure
+Answer: auto scalling group is following the default cooldown procedure .
+11:  big box hardware chain is setting up a new developed a system using iot sensor which capture items from stored compony want to analyze data in the hopea of being manage logistics and delivered of in demand items which aws service use to captre dta as close to load s3 or elasticcache 
+1 aurora 2 amazo kinesis data firehouse 3 redshift amazon kinesis data stream 
+Answer: amazon kinesis data firehose
+
+12: compony create app to calculate metalsc for ship building win contracts lengh ec2 purchasigh option to provide the best value given these long term contracts
+1 spot 2 dedicated host 3: reserved 4: on demand 
+Answer: RESERVED INSTANCE 
+
+13 app is translate 5 language files need to be stored somewhere that is high durable can acess frequently and high durable cost effective high scalable
+1.s3 2.rds 3.ebs 4.glacier
+Answer :Amazon s3 
+14 : s3 bucket upload aware of types of uploads u configure event notificaion for bucket which is not supported destination for event notification 
+1: SES  2: Lambda function 3: SNS 4: SQS 
+Answer: SES 
+
+15:ebs volume need to monitor db team notify by email executed which aws service can be configure to meet requirement 
+1:SES 2: CLOUDWATCH 3: SNS 4:SQS 
+Answer : 2:cloudwatch  3:SNS 
+
+16 : u can currently processing zendesk data using amazon appflow and transfering ticket data to your local file storage solution your processing about 2gb worth of information per month which of the following would be the best way to costs on this workflow select 2 A  migrate local file storage to s3. B
+reconfigure the appflow workflow to send data to s3. C integrate your local file storage solution with aws privatelink D create a lambada function to retrieve data from your local file storage and send to s3 
+
+A. Migrate local file storage to S3
+B. Reconfigure the Appflow workflow to send data to S3
+
+Migrating local file storage to S3 would allow you to take advantage of the scalability, durability, and cost-effectiveness of S3. Additionally, reconfiguring the Appflow workflow to send data to S3 directly would eliminate the need to store and process the data locally, which would also help to lower costs.
+
+AWS PrivateLink is a way to access to S3 and other services over an Amazon VPC endpoint, it can be useful when you want to keep your data inside your VPC. But in this case it doesn't help to lower the costs.
+
+Creating a Lambda function to retrieve data from your local file storage and send it to S3 would also help to reduce costs by eliminating the need to store and process the data locally. However, this option would require additional development and maintenance effort.
+
+
+17. a company is designing a website that uses a  amazon s3 bucket to store static images the compony wants all future requests to have faster response times while reducing both latency and cost which service configuration should a solution architect recommended?
+ A. deploy a NAT server in front of Amazon S3 
+ B. deploy amazon cloud front in front of Amazon S3 
+ C deploy a network load balancer in front of amazon S3
+ D configure auto scaling to automatically adjust the capacity of the website     
+
+B. deploy Amazon CloudFront in front of Amazon S3.
+
+Amazon CloudFront is a content delivery network (CDN) service that speeds up the delivery of static and dynamic web content, such as images, videos, and APIs. By deploying CloudFront in front of an Amazon S3 bucket, the solution architect can reduce both latency and cost by caching content closer to users, and also automatically route users to the closest CloudFront edge location. This can also help to reduce the load on the origin server (the Amazon S3 bucket) and improve response times for users. Additionally, CloudFront can provide additional security features such as DDoS protection, SSL/TLS support, and IP restriction.
+
+18.crm application is facing user experience issues with users reporting frequent sign in requests from the application. the application is currently hosted on multiple ec2 instances behind an application load balancer the engineering team has identified the root cause as unhealthy servers causing session data to be lost the team would like to implement a distributed in memory cache based session management solutions  which of the solution would recommended  A Use rds for distributed in memory cache based session management B . use DynamoDB for distributed in memory cache based session management C use elastic cache for  distributed cache based session management D use application load balancer sticky sessions
+
+C. use Elastic Cache for distributed in-memory cache based session management.
+
+Elastic Cache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in the cloud. It can be used to store session data in a distributed manner, which allows for fast and consistent access to session data across multiple servers. Additionally, Elastic Cache provides automatic failover and replication features to ensure high availability and durability of the session data. It also supports multiple cache engines such as Redis and Memcached. This solution will help to improve user experience by reducing the frequency of sign-in requests, as well as increasing the performance and scalability of the CRM application. While RDS and DynamoDB also provide in-memory caching capability, Elastic Cache is more specialized and optimized for in-memory caching, and can be better suited for session management. And Using sticky sessions on the application load balancer is not recommended as it might cause uneven distribution of traffic among instances and also if one of instances goes down, all the sessions associated with it will be lost.
+
+19. a retail company wants to establish encrypted network connectivity between its on-premises data centers and aws cloud the company wants to get the solution up and running in the fastest possible time and it should also support encryption in transit which of the following solution would you suggest to the company
+  A use aws secrets manager to establish encrypted network connectivity between 1 premises data center and aws cloud.
+  B  use site to site vpn to establish encrypted network connectivity between on premises data centers and aws cloud .
+  C use aws direct connect to establish encrypted network connectivity between  on premise data center and aws cloud 
+  D use aws data syn to establish encrypted network connectivity between the on premises data center and aws cloud 
+
+B. use Site-to-Site VPN to establish encrypted network connectivity between on-premises data centers and AWS cloud.
+
+A Site-to-Site VPN allows to establish a secure connection between the on-premises data centers and the AWS cloud. The VPN connection uses IPsec protocols to securely connect the on-premises network to the AWS cloud. Site-to-site VPN creates a virtual private network (VPN) tunnel between the on-premises network and the AWS virtual private cloud (VPC), this allows for encryption in transit, so that all data passing through the VPN is encrypted. This solution is relatively easy to set up and it allows the company to establish encrypted network connectivity in a faster time. While AWS Direct Connect provides dedicated network connection between the on-premises data center and AWS, it is a more complex solution that may take longer to set up and also more costly. AWS DataSync is a data transfer service for moving data between on-premises storage and Amazon S3, Amazon EFS, and FSx for Windows File Server, and it does not provide encryption in-transit. And AWS Secrets Manager is a password and secret management service and it would not be suitable for this use case.
+
+20 :  company is looking to move on premise it infrastructure to aws cloud company has many long term server license across the application stack and the cto wants to continue to utilize those licenses while moving to aws which recomended most cost effective solution 
+ A ec2 dedicated instance 
+ B ec2 on demand instance
+ C ec2 reseerved instance
+ D use ec2 dedicated hosts 
+
+
+
+D. use EC2 Dedicated Hosts
+
+EC2 Dedicated Hosts are physical servers with Amazon Elastic Compute Cloud (EC2) instances launched on them. They allow for the use of existing, long-term server licenses in the AWS cloud by providing visibility and control over the physical server that the instances are running on. This allows customers to use their existing server-bound software licenses, such as Windows Server and SQL Server, in the AWS cloud. Additionally, EC2 Dedicated Hosts can provide additional regulatory compliance and visibility advantages compared to other EC2 instance types.
+
+EC2 Dedicated Instances are instances that run on hardware that is dedicated to a single customer. They are similar to EC2 Dedicated Hosts, but do not provide the same level of visibility and control over the physical server.
+
+EC2 On-Demand instances are instances that can be launched on-demand and are billed by the hour or second. They are suitable for applications with short-term or unpredictable workloads, but are generally more expensive than Reserved Instances.
+
+EC2 Reserved Instances are instances that can be reserved for a one- or three-year term, and offer a discounted hourly rate compared to On-Demand instances. They are suitable for applications with steady-state or predictable usage, but may not be the most cost-effective option for the company if they have long-term server licenses that they want to continue to use.
+ 
+21: developer has build python based web application the developer  wants to upload code to aws cloud and handle deployment automatically he wants to access underlying operating system for further enhancements as which service is use? option   A  cloud formation option B Elastic compute cloud (EC2)  option C  elastic container service (ECS) option  D .aws elastic Beanstalk
+
+correct answer : aws elastic beanstalk 
+
+
+Option B: Elastic Compute Cloud (EC2) is the service that allows the developer to access the underlying operating system for further enhancements and handle deployment automatically. It allows the developer to launch virtual machines (called instances) on the AWS cloud, and have full control over the operating system and software that runs on those instances. Cloud Formation, Elastic Container Service (ECS) and AWS Elastic Beanstalk are other AWS services, but they do not provide direct access to the underlying operating system.
+
+
+22) a compony has an application that ingests incoming message dozens of other application and microservices then quickly consumes these message the number of message varies drastically and sometimes increases suddenly to 100,000 each second the compony wants to decouple the solution and increase scalability which solution meets these requirement?                
+  1 persist the message to amazon kinesis data analytics
+  2 deploy the ingestion application to amazon ec2 instance in an auto scaling group to scale the no of ec2 instances based on CPU metrics
+  3 write message to amazon kinesis data stream with single shard 
+  4 publish the message to amazon simple notification service.
+Write message to Amazon Kinesis Data Stream with single shard
+A: Use a target tracking scaling policy based on customer Amazon SQS queue metrics is the recommended solution for this use case. This type of scaling policy allows you to set a target for the number of messages in the SQS queue, and the Auto Scaling group will automatically adjust the number of EC2 instances to maintain that target. This will help ensure that the performance of the application does not go down during sudden spikes in order received. 
+
+
+23)A solution architect is designing a application for document sharing the users will upload documents that are made available to other users there will be tens of thousands of the documents what will be the most cost effective storage solutions A ) EFS B) S3 C) GLACIER EBS 
+
+The most cost-effective storage solution for a document sharing application with tens of thousands of documents would likely be Amazon S3. S3 is a scalable and durable object storage service that is designed for high-throughput and frequent access, which makes it well-suited for storing and retrieving large numbers of documents. Additionally, S3 offers a variety of storage classes, including Standard, Intelligent-Tiering, and Glacier, that can help to further reduce costs by automatically moving data to the appropriate storage class based on usage patterns.
+

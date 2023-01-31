@@ -1,0 +1,40 @@
+ COST OPTIMAZATION QUETIONS SETS 
+
+1 :A web application is deploy in aws which consists of 2 tier design:web and database layer what solution shoould you recomended to adress vulnerablity such as cross-site scripting 
+A network load balancer place the web layer behind the NLB AND ENABLE AWS WAF.
+B. application load balancer place the web layer behind  the NLB AND ENABLE AWS WAF.
+c. classic load balancer place the web layer behind  the NLB AND ENABLE AWS WAF.
+Answer: (ALB Application Load Balancer)
+
+2: a compony stores data on amazon RDS postgreSQL the team run queriess at the start of each month during billing closer period i degraded database performance owning to execessive utilization the compony wants to reduce thee effect of reporting on the database which solution will meet the goal
+A: deploy multi-AZ DB AND direct reporting traffic to sandby dtabase.
+B use amazon redshift db and redirect reporting traffic to redshift database 
+C: USE RDS cross-region read replica and redirect reporting traffic to this replica 
+D: CREATE a read replica and direct reporting traffic to this replica 
+Answer : CREATE a read replica and direct reporting traffic to this replica  
+
+3: each application required 47 TB of data to transfer on cloud after the data compony will secure network connectio with constant throughput between its application and data centers u need to design a solutions ensure that data transfer occures just once network connection is mainted 
+1 use aws snowball for initial data transfer and direct connect for ongoing connectivity.
+2: use aws snowball for  initial data transfer and site-to site vpn for ongoing connectivity.
+
+Answer: use aws snowball for initial data transfer and direct connect for on
+ 
+4: amazon ecs to perform image processing on multiple subnets each private subnets NAT INSTANES images needs to be stored on amazon s3 bucket the compony wants to reduce the expenses associated with data transfeer between Amazon ECS and s3 which solution is most cost-effective 
+use interface endpoint to traffic destine amazon s3 
+use a gateway endpoints for traffic destined to Amazon s3 
+configure NAT gateway to replace the NAT instance
+
+Aswer:  a gateway endpoints for traffic destined to Amazon s3 
+
+5: compony stores data s3 bucket some s3 bucket contain less frequently acessed data then others upon investigation it was found that some lifecycle rules are either not followed consistently or are enfoced in part high cost for storage .
+security list 2:s3 intelligent tiering 3: dynamodb instead of s3  4:use s3 glacier deep Archive 
+Answer: use s3 intelligent-tiering .
+
+6: assign uses load balancer to direct traffic to an auto scalling group of ec2 instance across multiple A.Z  application deploy on these instance is lifr insurance application which required path base and host based routing which load balancer is use?
+1 classic 2 any type 3: network load balancer 4: application load balancer 
+Answer: Application load balancer.
+
+7: Able to identify cost cutting in s3 s3 is vary rarely used and has only been retained for audit porpose u ddecide to achive this data to cheaper storage solutio which aws solution would meet this requirement ?
+use a lifecycle policy to achive the data to glacier 
+8: architect set up an aws network load balancer with cross zone load balancing enable there are 12 instances in single target group 4 instances are in availability zone A and 8 instances in B  the target group has health check that uses tcp and 2 instances in B ARE MAKED as unhealthy which of the following correctly describes how the load balancer routes traffic to the remaining healthy instances ? A traffic is distributed evenly between the remaining healthy target with each target getting roughly 10% of traffic. option  B A traffic is distributed evenly between the remaining healthy target with each target getting roughly 12.5 % of traffic. option c : A traffic is distributed evenly between the remaining healthy target with each target getting roughly 16.7% of traffic. D no traffic with 100% going to availability zone A 
+
