@@ -1,0 +1,93 @@
+UDEMY TEST 3 DOMAIN 4 COST OPTIMIZED 
+
+Question 11: Correct
+A financial services company is looking to move its on-premises IT infrastructure to AWS Cloud. The company has multiple long-term server bound licenses across the application stack and the CTO wants to continue to utilize those licenses while moving to AWS.
+
+As a solutions architect, which of the following would you recommend as the MOST cost-effective solution?
+
+answer: use ec2 dedicated hosts 
+
+You can use Dedicated Hosts to launch Amazon EC2 instances on physical servers that are dedicated for your use. Dedicated Hosts give you additional visibility and control over how instances are placed on a physical server, and you can reliably use the same physical server over time. As a result, Dedicated Hosts enable you to use your existing server-bound software licenses like Windows Server and address corporate compliance and regulatory requirements.
+
+Question 17: Correct
+A social media startup uses AWS Cloud to manage its IT infrastructure. The engineering team at the startup wants to perform weekly database rollovers for a MySQL database server using a serverless cron job that typically takes about 5 minutes to execute the database rollover script written in Python. The database rollover will archive the past week’s data from the production database to keep the database small while still keeping its data accessible.
+
+As a solutions architect, which of the following would you recommend as the MOST cost-efficient and reliable solution?
+Answer: schedule a weekly eventBridge event cron expression to invoke a  lambda function that runs the database rollover job 
+
+Schedule a weekly EventBridge event cron expression to invoke a Lambda function that runs the database rollover job
+
+AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume. AWS Lambda supports standard rate and cron expressions for frequencies of up to once per minute.
+
+Schedule expressions using rate or cron:
+
+Question 24: Correct
+An e-commerce company has deployed its application on several EC2 instances that are configured in a private subnet using IPv4. These EC2 instances read and write a huge volume of data to and from Amazon S3 in the same AWS region. The company has set up subnet routing to direct all the internet-bound traffic through a NAT gateway. The company wants to build the most cost-optimal solution without impacting the application's ability to communicate with Amazon S3 or the internet.
+
+As an AWS Certified Solutions Architect Associate, which of the following would you recommend?
+Answer: set up vpc gateway endpoint for amazon s3 attach an endpoint policy to the  endpoint update the route table to direct the  S3 bound traffic to the vpc endpoint .
+
+Question 37: Correct
+Your application is hosted by a provider on yourapp.provider.com. You would like to have your users access your application using www.your-domain.com, which you own and manage under Route 53.
+
+What Route 53 record should you create?
+answer: create a CNAME record 
+
+
+Question 7: Incorrect
+An IT company is looking to move its on-premises infrastructure to AWS Cloud. The company has a portfolio of applications with a few of them using server bound licenses that are valid for the next year. To utilize the licenses, the CTO wants to use dedicated hosts for a one year term and then migrate the given instances to default tenancy thereafter.
+
+As a solutions architect, which of the following options would you identify as CORRECT for changing the tenancy of an instance after you have launched it? (Select two)
+
+A) YOU can change the tenancy of an instance from host to dedicated .
+B) you can change the tenency of an instance from dedicated host 
+
+
+
+Question 21: Incorrect
+The development team at a retail company wants to optimize the cost of EC2 instances. The team wants to move certain nightly batch jobs to spot instances. The team has hired you as a solutions architect to provide the initial guidance.
+
+Which of the following would you identify as CORRECT regarding the capabilities of spot instances? (Select three)
+Answer: B) if a spot request is persistent then it is opened again after your spot instance is interrupted.
+D) when you cancle an active spot request it does not terminated the associated instance 
+F) spot blocks are designed not to be interrupted 
+
+Quetion 25 incorrect 
+A startup has created a new web application for users to complete a risk assessment survey for COVID-19 symptoms via a self-administered questionnaire. The startup has purchased the domain covid19survey.com using Route 53. The web development team would like to create a Route 53 record so that all traffic for covid19survey.com is routed to www.covid19survey.com.
+
+As a solutions architect, which of the following is the MOST cost-effective solution that you would recommend to the web development team?
+
+Answer: B) create an alias record for covid19 survey.com that routes traffic to www.covid19survey.com
+
+
+Question 39: Incorrect
+An IT training company hosted its website on Amazon S3 a couple of years ago. Due to COVID-19 related travel restrictions, the training website has suddenly gained traction. With an almost 300% increase in the requests served per day, the company's AWS costs have sky-rocketed for just the S3 outbound data costs.
+
+As a Solutions Architect, can you suggest an alternate method to reduce costs while keeping the latency low?
+
+D) configure amazon clouffront to distrubute the data hosted on amazon s3 cost effectively 
+
+
+
+
+Question 55: Incorrect
+A company wants to migrate its on-premises databases to AWS Cloud. The CTO at the company wants a solution that can handle complex database configurations such as secondary indexes, foreign keys, and stored procedures.
+
+As a solutions architect, which of the following AWS services should be combined to handle this use-case? (Select two)
+A) aws database migration service 
+E) aws schema conversion tool 
+
+
+
+Question 63: Incorrect
+A financial services company is migrating their messaging queues from self-managed message-oriented middleware systems to Amazon SQS. The development team at the company wants to minimize the costs of using SQS.
+
+As a solutions architect, which of the following options would you recommend for the given use-case?
+
+A) use SQS long polling to retrive messages from your amazon SQS queue 
+
+
+
+
+
+
